@@ -8,7 +8,7 @@ import {
   USER_LOGIN_SUCCESS,
   USER_LOGOUT,
 } from "../Constants/UserContants"
-import axios from "axios";
+import axiosInstance from './axiosconfig';
 import { toast } from "react-toastify"
 
 
@@ -29,7 +29,7 @@ export const login = (email, password) => async (dispatch) => {
       },
     };
 
-    const { data } = await axios.post(
+    const { data } = await axiosInstance.post(
       `/api/users/login`,
       { email, password },
       config
@@ -84,7 +84,7 @@ export const listUser = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/users`, config);
+    const { data } = await axiosInstance.get(`/api/users`, config);
       
     dispatch({ type: USER_LIST_SUCCESS, payload: data });
   } catch (error) {
