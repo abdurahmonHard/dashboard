@@ -9,7 +9,7 @@ import {
   USER_LOGOUT,
 } from "../Constants/UserContants"
 import { baseURL } from './Urlconfig';
-import axios from './axios'
+import axios from 'axios'
 import { toast } from "react-toastify"
 
 
